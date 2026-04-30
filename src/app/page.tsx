@@ -7,6 +7,7 @@ import { SkillsSection } from "@/components/home/SkillsSection";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { InnovationSection } from "@/components/home/InnovationSection";
 import { ContactSection } from "@/components/home/ContactSection";
+import { RoadmapSection } from "@/components/home/RoadmapSection";
 import { SocialIcons } from "@/components/ui/SocialIcons";
 
 import { Terminal } from "@/components/ui/Terminal";
@@ -24,6 +25,7 @@ export default function Home() {
       <HeroSection />
       <WhyMeSection />
       <SkillsSection />
+      <RoadmapSection />
       <ProjectsSection />
       <InnovationSection />
       <ContactSection />

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BrainCircuit, Rocket, Code2 } from "lucide-react";
+import { ResumeButton } from "@/components/ui/ResumeButton";
 
 export function WhyMeSection() {
   const cards = [
@@ -35,7 +36,7 @@ export function WhyMeSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-neon-purple to-electric-blue mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {cards.map((card, index) => (
             <motion.div
               key={index}
@@ -55,6 +56,19 @@ export function WhyMeSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <ResumeButton 
+            text="View My Full Resume" 
+            variant="outline"
+            className="hover:shadow-[0_0_20px_rgba(176,38,255,0.3)]"
+          />
+        </motion.div>
       </div>
     </section>
   );

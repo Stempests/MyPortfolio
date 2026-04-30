@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Send, Loader2, CheckCircle, XCircle } from "lucide-react";
+import { ResumeButton } from "@/components/ui/ResumeButton";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -63,6 +64,20 @@ export function ContactSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-subtle-red to-neon-purple mx-auto rounded-full" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <ResumeButton 
+            text="Download My Resume" 
+            variant="primary"
+            iconType="download"
+            className="w-full md:w-auto text-center"
+          />
         </motion.div>
 
         <motion.div

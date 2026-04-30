@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Trophy, Sparkles } from "lucide-react";
+import { ResumeButton } from "@/components/ui/ResumeButton";
 import Tilt from "react-parallax-tilt";
 
 export function HeroSection() {
@@ -73,6 +74,12 @@ export function HeroSection() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </a>
+            
+            <ResumeButton 
+              variant="outline" 
+              className="px-8 py-4 rounded-full border-neon-purple/50 text-white hover:bg-neon-purple/10"
+              text="Resume"
+            />
             
             <a
               href="#contact"
