@@ -7,7 +7,10 @@ export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
+    setIsMounted(true);
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -36,7 +39,7 @@ export function CustomCursor() {
   }, []);
 
   // Don't render cursor on mobile
-  if (typeof window !== "undefined" && window.innerWidth <= 768) return null;
+  if (!isMounted || (typeof window !== "undefined" && window.innerWidth <= 768)) return null;
 
   return (
     <>

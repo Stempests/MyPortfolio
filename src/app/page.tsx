@@ -1,6 +1,7 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
-import { CustomCursor } from "@/components/layout/CustomCursor";
-import { BackgroundParticles } from "@/components/layout/BackgroundParticles";
 import { HeroSection } from "@/components/home/HeroSection";
 import { WhyMeSection } from "@/components/home/WhyMeSection";
 import { SkillsSection } from "@/components/home/SkillsSection";
@@ -10,8 +11,10 @@ import { ContactSection } from "@/components/home/ContactSection";
 import { RoadmapSection } from "@/components/home/RoadmapSection";
 import { SocialIcons } from "@/components/ui/SocialIcons";
 
-import { Terminal } from "@/components/ui/Terminal";
-import { AIChatBot } from "@/components/ui/AIChatBot";
+const CustomCursor = dynamic(() => import("@/components/layout/CustomCursor").then(mod => mod.CustomCursor), { ssr: false });
+const BackgroundParticles = dynamic(() => import("@/components/layout/BackgroundParticles").then(mod => mod.BackgroundParticles), { ssr: false });
+const Terminal = dynamic(() => import("@/components/ui/Terminal").then(mod => mod.Terminal), { ssr: false });
+const AIChatBot = dynamic(() => import("@/components/ui/AIChatBot").then(mod => mod.AIChatBot), { ssr: false });
 
 export default function Home() {
   return (
